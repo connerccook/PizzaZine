@@ -36,10 +36,10 @@ public:
        pizzaLocations = new Location[size];
        this -> size = size;
      }
-     PizzaZine::~PizzaZine() {
+     PizzaZine::~PizzaZine() { //destructor
        delete [] pizzaLocations;
      }
-Location& PizzaZine::operator[](const size_t &i){ //
+Location& PizzaZine::operator[](const size_t &i){ //returns the indicated index
        return pizzaLocations[i];
      }
 
