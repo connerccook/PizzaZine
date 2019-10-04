@@ -34,7 +34,10 @@ public:
      PizzaZine::PizzaZine(const size_t &size){ //constructor with paramters sets size to the inputted size
        pizzaLocations = new Location[size];
      }
-Location& PizzaZine::operator[](const size_t &i){
+     PizzaZine::~PizzaZine() {
+       delete [] pizzaLocations;
+     }
+Location& PizzaZine::operator[](const size_t &i){ //
        return pizzaLocations[i];
      }
 
