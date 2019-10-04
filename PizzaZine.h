@@ -30,9 +30,11 @@ public:
 
      PizzaZine::PizzaZine(){ //default constructor sets size to equal 50
        pizzaLocations = new Location[size=50];
+       this->size = 50;
      }
      PizzaZine::PizzaZine(const size_t &size){ //constructor with paramters sets size to the inputted size
        pizzaLocations = new Location[size];
+       this -> size = size;
      }
      PizzaZine::~PizzaZine() {
        delete [] pizzaLocations;
