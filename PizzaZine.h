@@ -14,19 +14,29 @@ using std::string;
 
 class PizzaZine {
 private:
-    Location* pizzaLocations;
+    Location* pizzaLocations; // member variables
     size_t size;
 
 public:
-    PizzaZine(const size_t& = 50);
-    ~PizzaZine();
+    PizzaZine(); //default constructor
+    PizzaZine(const size_t &size); //constructor with parameters
+    ~PizzaZine(); // destructor
 
-    Location& operator[](size_t);
+    Location& operator[](const size_t &i); //operator function
 
     // This function is implemented for you
     void readInFile(const string&);
 };
 
+     PizzaZine::PizzaZine(){ //default constructor sets size to equal 50
+       pizzaLocations = new Location[size=50];
+     }
+     PizzaZine::PizzaZine(const size_t &size){ //constructor with paramters sets size to the inputted size
+       pizzaLocations = new Location[size];
+     }
+Location& PizzaZine::operator[](const size_t &i){
+       return pizzaLocations[i];
+     }
 
 void PizzaZine::readInFile(const string& filename) {
     ifstream inFile(filename);
